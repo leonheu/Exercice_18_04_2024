@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+}
+/*  1 de l'exercice 2 */
+header {
+    background-color: darkblue;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+/* Alignement du logo et du nav */
+header img {
+    width: 60%;
+    margin-left: 5%;
+}
+header nav {
+    display: grid;
+}
+/* On cache la nav des mobiles */
+.other-nav {
+    display: none;
+}
+header ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* On enlève les repère des liste et on centre */
+header li {
+    list-style: none;
+    place-content: center;
+}
+
+/* Décoration des liens sur le header */
+header a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: turquoise;
+}
+
+/* Au passage de la souris sur les liens le texte s'agrandit. */
+a:hover {
+    font-size: large;
+}
+
+/* Le 7 de l'exercice 2 */
+main {
+    width: 80%;
+    background: url(../img/AdobeStock_343543079.jpeg);
+    margin-left: 10%;
+}
+
+/* Décoration du body général et des articles de l'acueil */
+body {
+    background-color: #001b37;
+    display: flex;
+    flex-direction: column;
+}
+.section-articles {
+    margin: 5%;
+    padding: 5%;
+    background-color: #ffffffcc;
+    border-radius: 20px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* Backround et texte de la section présentation */
+.container-accueil {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+.presentation {
+    margin: 5%;
+    background: url(../img/flower-backround.jpg);
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: inline;
+    text-align: center;
+}
+
+.presentation:hover {
+    background: none;
+    background-color: black;
+    animation: txt 4s forwards;
+}
+/* Animation du bloc presentation */
+@keyframes txt {
+    20% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    100% {
+        color: white;
+    }
+}
+
+/* Mettre les image de galerie en colonne de 3(fait en Grid) */
+.image-galerie {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Décoration autour des image */
+.image-galerie img {
+    margin: 10% auto;
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    box-shadow: 16px 20px 60px #001b37, -20px -20px 60px #013063;
+}
+
+/*Opacité au survole des images de la galerie */
+.image-galerie img:hover {
+    opacity: 0.5;
+}
+
+/* Centrer les images */
+.image-galerie a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* on mets un marge autour du fieldset car la marge auto est de 0 */
+fieldset {
+    margin: 3%;
+}
+
+/* On mets le formulaire sur 2 colonnes et on le décore */
+form {
+    margin: 3%;
+    border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.884);
+    box-shadow: 12px 13px 20px 12px #000000c4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* même chose ici qu'avec le fieldset */
+form div {
+    margin: 2%;
+}
+
+/* Au moment ou on clique sur un champ on fait une bordure verte */
+form *:focus {
+    border: 4px solid green;
+}
+
+/* Règle la taille des éléments du form résponsivement */
+.box-part1 input,
+.box-part1 select {
+    width: 90%;
+}
+form textarea {
+    height: 70%;
+    width: 90%;
+    resize: none;
+}
+
+/* Réglage a l'interieur de la grille des form */
+.box-part1 div {
+    display: flex;
+    justify-content: center;
+}
+.box-titre {
+    display: inline;
+    text-align: center;
+}
+.box-part1 {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    border-radius: 10px;
+}
+.box-part2 {
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+.chkbox-bt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Partie des mention légal */
+.container-ml {
+    background-color: aqua;
+    height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* Décoration footer */
+footer {
+    background-color: darkblue;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* LES MEDIAQUERIES */
+/* Pour tablette */
+@media screen and (max-width: 1000px) {
+    /* On change la nav de pc contre celle de la tablette et la pc*/
+    .pc-nav {
+        display: none;
+    }
+    .other-nav {
+        display: grid;
+        margin: 3%;
+    }
+
+    /* Mets les images de la galerie sur 2 colonnes */
+    .image-galerie {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Mets le formulaire sur 1 colonnes */
+    form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pour Téléphone*/
+@media screen and (max-width: 640px) {
+    /* On change la nav de pc contre celle de la tablette et la pc*/
+    .pc-nav {
+        display: none;
+    }
+    .other-nav {
+        display: grid;
+        margin: 3%;
+    }
+
+    /* Mets les images de la galerie sur 1 colonnes */
+    .image-galerie {
+        grid-template-columns: 1fr;
+    }
+
+    /* on mets le conteneur a 100% pour téléphone*/
+    .container {
+        margin: 0%;
+        width: 100%;
+    }
+}

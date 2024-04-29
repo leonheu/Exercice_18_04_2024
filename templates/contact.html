@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+        <link rel="stylesheet" href="../asset/styles/style.css">
+    </head>
+    <body>
+        <header>
+            <img src="../asset/img/logo.png" alt="logo">
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="../index.html" title="Vers l'accueil">Accueil</a></li>
+                    <li><a href="./galerie.html" title="Vers la galerie">Galerie</a></li>
+                    <li><a href="./contact.html" title="Pour nous contacter">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="other-nav">
+                <select name="menu" onchange="location = this.value;" autofocus>
+                    <option value="./contact.html">Contact</option>
+                    <option value="../index.html">Accueil</option>
+                    <option value="./galerie.html">Galerie</option>
+                </select>
+            </nav>
+        </header>
+
+        <main  class="container-contact">
+            <fieldset>
+                <legend>Formulaire de contact</legend>
+                <form action="#" method="POST" class="form-contact">    
+                    <div class="box-part1">
+                        <div class="box-titre">
+                            <label for="monsieur"><input type="radio" name="civilite" id="monsieur" checked="checked">Monsieur</label> 
+                            <label for="madame"><input type="radio" name="civilite" id="madame">Madame</label> 
+                            <label for="autres"><input type="radio" name="civilite" id="autres">Autres</label> 
+                        </div>
+                        <div class="box-name">
+                            <label for="name">Nom:</label>
+                            <input type="text" name="name" id="name" placeholder="Votre nom" required="required">  
+                        </div>
+                        <div class="box-firstname">                  
+                            <label for="firstname">Prénom:</label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
+                        </div>
+                        <div class="box-phone">
+                            <label for="phone">Numéro de téléphone:</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Votre numéro de téléphone" required>
+                        </div>
+                        <div class="box-mail">
+                            <label for="mail">Email:</label>
+                            <input type="email" name="mail" id="mail" placeholder="votremail@mail.com" required>
+                        </div>
+                        <div class="box-country">
+                            <label for="country">Pays:</label>
+                            <select name="country" id="country">
+                                <option value="">--Liste des pays--</option>
+                                <option value="France">France</option>
+                                <option value="Espagne">Espagne</option>
+                                <option value="Italie">Italie</option>
+                                <option value="Allemagne">Allemagne</option>
+                                <option value="Bresil">Brésil</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Japon">Japon</option>
+                                <option value="Mexique">Mexique</option>
+                                <option value="Portugal">Portugal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box-part2">
+                        <div class="msg">
+                            <label for="msg">Message:<textarea name="msg" id="msg" cols="25" rows="5" placeholder="Mettez votre message ici." required></textarea>
+                        </div>
+                        <div class="chkbox-bt">
+                            <label for="RGPD"><input type="checkbox" name="RGPD" id="RGPD" required>Cocher pour accepter le rgpd</label>
+                            <button type="submit">Valider</button>
+                        </div>
+                    </div>  
+                </form>
+            </fieldset>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="./mention.html" title="mentions légales">Mentions légales</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>
